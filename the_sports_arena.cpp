@@ -12,9 +12,9 @@ int main(){
     dp[3] = 2;
     dp[4] = 1;
     for(int i=5; i<=8194; i++){
+        int minimum = INT_MAX;
         for(int j=0; j<prices.size(); j++){
-            int minimum = INT_MAX;
-            if(i-prices[j] > 0){
+            if(i-prices[j] >= 0){
                 // cout << i << " " << prices[j] << endl;
                 dp[i] = min(minimum, dp[i-prices[j]] + 1);
             }
