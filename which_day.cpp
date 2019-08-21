@@ -26,7 +26,7 @@ int main(){
     int start = (2*(year-1))%7;
     // cout << start << endl;
     cout << ((month - 1) * 31 + day)%7 + start - 1<< endl;
-    sum += ((month - 1) * 31 + day)%7 + start - 1;
+    sum += (((month - 1) * 31 + day)%7 + start - 1)%7;
     // cout << 2*start << endl;
     }
     cout << sum << endl;
