@@ -144,14 +144,15 @@ int main(){
         sort(sighting.begin(), sighting.end());
         unordered_map<int, int> hmap;
         int animalId = -1;
+        int count = INT_MIN;
         for(int j=0; j<sighting.size(); j++){
-            if(hmap[sighting[j]] > 0){
+            hmap[sighting[j]]++;
+            if(hmap[sighting[j]] > count){
+                count = max(count, hmap[sighting[j]]);
                 animalId = sighting[j];
-                break;
-            }else{
-                hmap[sighting[j]]++;
             }
         }
+        cout << count << endl;
         cout << animalId << endl;
         result *= animalId;
     }
